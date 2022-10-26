@@ -1,0 +1,17 @@
+[package]
+name = "volo-gen"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+anyhow.workspace = true
+async-trait.workspace = true
+pilota.workspace = true
+volo.workspace = true
+volo-thrift.workspace = true
+
+[build-dependencies]
+volo-build = "*" # we recommend to use the latest framework version for new features and bug fixes

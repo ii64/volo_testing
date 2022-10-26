@@ -1,0 +1,34 @@
+[profile.release]
+opt-level = 3
+debug = true
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = 'unwind'
+incremental = false
+codegen-units = 1
+rpath = false
+
+[workspace]
+members = [
+    "the_example",
+    "volo-gen",
+]
+#exclude = ["volo"]
+resolver = "2"
+
+[workspace.package]
+authors = ["Nugraha <richiisei@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+anyhow = "1"
+async-trait = "0.1"
+tokio = { version = "1", features = ["full"] }
+volo-gen = { path = "./volo-gen" }
+pilota = "*"
+volo = "*" 
+volo-thrift = "*"
+#volo = { path = "./volo/volo" }
+#volo-thrift = { path = "./volo/volo-thrift" }

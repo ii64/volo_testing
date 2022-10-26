@@ -1,0 +1,7 @@
+entries:
+  default:
+    protocol: thrift
+    filename: thrift_gen.rs
+    idls:
+    - source: local
+      path: .././idl/service.thrift
