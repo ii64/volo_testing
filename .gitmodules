@@ -1,0 +1,6 @@
+[submodule "pilota"]
+	path = pilota
+	url = ./pilota
+[submodule "volo"]
+	path = volo
+	url = ./volo

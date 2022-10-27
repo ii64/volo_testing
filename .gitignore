@@ -2,5 +2,4 @@
 .idea/
 .vscode/
 target/
-volo/
 *.code-workspace

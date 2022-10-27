@@ -1021,8 +1021,6 @@ dependencies = [
 [[package]]
 name = "pilota"
 version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8a776dde994a06ab5b69f2c8868f238bb7d2cdac31d58d24f61479278e9f6bd"
 dependencies = [
  "anyhow",
  "async-recursion",
@@ -1716,8 +1714,6 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 [[package]]
 name = "volo"
 version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "da2d997b0857435823404de7a8d5e4f16dfa04087c1988437f19f3633c89da1a"
 dependencies = [
  "async-broadcast",
  "async-trait",
@@ -1782,8 +1778,6 @@ dependencies = [
 [[package]]
 name = "volo-thrift"
 version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "680644f78ac4add9a528592f2f696b1098442879ba14216b720c69fc4166440c"
 dependencies = [
  "anyhow",
  "async-trait",
