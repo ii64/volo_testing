@@ -727,6 +727,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0717cef1bc8b636c6e1c1bbdefc09e6322da8a9321966e8928ef80d20f7f770f"
 
 [[package]]
+name = "linkedbytes"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d8078f7e58507f9a29e35dab0e02a18874f11be833260e6227777b71f5c0cda9"
+dependencies = [
+ "bytes",
+ "tokio",
+]
+
+[[package]]
 name = "lock_api"
 version = "0.4.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1796,6 +1806,7 @@ dependencies = [
  "fxhash",
  "lazy_static",
  "linked-hash-map",
+ "linkedbytes",
  "metainfo",
  "motore",
  "num_enum",
