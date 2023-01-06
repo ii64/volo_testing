@@ -14,4 +14,4 @@ volo.workspace = true
 volo-thrift.workspace = true
 
 [build-dependencies]
-volo-build = "*" # we recommend to use the latest framework version for new features and bug fixes
+volo-build.workspace = true

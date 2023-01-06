@@ -30,15 +30,19 @@ repository = "https://github.com/ii64/volo_testing"
 volo-gen = { path = "./volo-gen" }
 volo = { path = "./volo/volo" }
 volo-thrift = { path = "./volo/volo-thrift" }
+volo-build = { path = "./volo/volo-build" }
 
 pilota = { path = "./pilota/pilota" }
 pilota-build = { path = "./pilota/pilota-build" }
 pilota-thrift-parser = { path = "./pilota/pilota-thrift-parser" }
 
+# pilota = "*"
+# volo = "*"
+# volo-thrift = "*"
 
 # ---------------------------
 
-motore = "0.2"
+motore = "0.3"
 motore-macros = "0.1"
 metainfo = "0.6"
 
@@ -100,3 +104,4 @@ update-informer = "0.5"
 url_path = "0.1"
 walkdir = "2"
 linkedbytes = "0.1"
+faststr = "0.1"

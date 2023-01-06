@@ -11,6 +11,7 @@ fn run() {
 
 #[volo::main]
 async fn main() {
+    // setup logger
     Builder::new()
         .format(|buf, record| {
             writeln!(buf,

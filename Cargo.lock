@@ -382,6 +382,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "diffy"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e616e59155c92257e84970156f506287853355f58cd4a6eb167385722c32b790"
+dependencies = [
+ "nu-ansi-term",
+]
+
+[[package]]
 name = "dirs"
 version = "4.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -433,6 +442,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a7a407cfaa3385c4ae6b23e84623d48c2798d06e3e6a1878f7f59f17b3f86499"
 dependencies = [
  "instant",
+]
+
+[[package]]
+name = "faststr"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fa82a898ed06b12d83fcf7249465ea22dcde9f3ce08b3a876128c505de4e0bb0"
+dependencies = [
+ "bytes",
+ "serde",
 ]
 
 [[package]]
@@ -728,11 +747,12 @@ checksum = "0717cef1bc8b636c6e1c1bbdefc09e6322da8a9321966e8928ef80d20f7f770f"
 
 [[package]]
 name = "linkedbytes"
-version = "0.1.3"
+version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d8078f7e58507f9a29e35dab0e02a18874f11be833260e6227777b71f5c0cda9"
+checksum = "4f1ebd8faf875631d19aa28beb26b585bd96b47a763d4cd2557fe835ff64186f"
 dependencies = [
  "bytes",
+ "faststr",
  "tokio",
 ]
 
@@ -802,9 +822,9 @@ dependencies = [
 
 [[package]]
 name = "motore"
-version = "0.2.1"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "409cca93fe595d6b6e5db50c03876e25ef2c019f61ac5544d4a4d44928fdab03"
+checksum = "384cd5ada2f73985da91a26b1a475e540250d93567495dd66a759ece56818297"
 dependencies = [
  "futures",
  "motore-macros",
@@ -814,9 +834,9 @@ dependencies = [
 
 [[package]]
 name = "motore-macros"
-version = "0.1.1"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4cea7b9fa504fca8e7e4ed5113fc30109b8e9a7c9cb09b0841192a447eac2817"
+checksum = "048405af4b0ef8360c5bf870806f453346b3e463c0fafc33670627c29aed8500"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1040,26 +1060,29 @@ dependencies = [
 
 [[package]]
 name = "pilota"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "async-recursion",
  "async-trait",
  "bytes",
  "derivative",
+ "faststr",
  "integer-encoding",
  "lazy_static",
- "smol_str",
+ "linkedbytes",
  "thiserror",
  "tokio",
 ]
 
 [[package]]
 name = "pilota-build"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ae7edf15d31f7af7e069a59cf0cef720357a7ef2417ec496c083290061b81858"
+version = "0.3.0"
 dependencies = [
+ "async-trait",
+ "derivative",
+ "diffy",
+ "faststr",
  "fxhash",
  "heck 0.4.0",
  "itertools",
@@ -1068,6 +1091,7 @@ dependencies = [
  "paste",
  "petgraph",
  "phf",
+ "pilota",
  "pilota-thrift-parser",
  "proc-macro2",
  "protobuf-parse2",
@@ -1075,17 +1099,16 @@ dependencies = [
  "quote",
  "salsa",
  "scoped-tls",
- "smol_str",
  "syn",
+ "tempfile",
+ "tokio",
  "tracing",
  "tracing-subscriber",
 ]
 
 [[package]]
 name = "pilota-thrift-parser"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22596743c4945b405fd7cea2a46c72032bdbce917cd06426b0d920aec0a3ce58"
+version = "0.4.0"
 dependencies = [
  "nom",
 ]
@@ -1433,15 +1456,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a507befe795404456341dfab10cef66ead4c041f62b8b11bbb92bffe5d0953e0"
 
 [[package]]
-name = "smol_str"
-version = "0.1.23"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7475118a28b7e3a2e157ce0131ba8c5526ea96e90ee601d9f6bb2e286a35ab44"
-dependencies = [
- "serde",
-]
-
-[[package]]
 name = "socket2"
 version = "0.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1586,9 +1600,9 @@ dependencies = [
 
 [[package]]
 name = "toml"
-version = "0.5.9"
+version = "0.5.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d82e1a7758622a465f8cee077614c73484dac5b836c02ff6a40d5d1010324d7"
+checksum = "1333c76748e868a4d9d1017b5ab53171dfd095f70c712fdb4653a406547f598f"
 dependencies = [
  "serde",
 ]
@@ -1733,11 +1747,12 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 
 [[package]]
 name = "volo"
-version = "0.2.1"
+version = "0.3.0"
 dependencies = [
  "async-broadcast",
  "async-trait",
  "dashmap",
+ "faststr",
  "futures",
  "lazy_static",
  "metainfo",
@@ -1745,7 +1760,6 @@ dependencies = [
  "once_cell",
  "pin-project",
  "rand",
- "smol_str",
  "socket2",
  "thiserror",
  "tokio",
@@ -1756,9 +1770,7 @@ dependencies = [
 
 [[package]]
 name = "volo-build"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c11663e4fff1951f7ded357dbaac4537e4b6dc62bd0096acfcd5375f63d95702"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1797,11 +1809,12 @@ dependencies = [
 
 [[package]]
 name = "volo-thrift"
-version = "0.2.1"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "async-trait",
  "bytes",
+ "faststr",
  "futures",
  "fxhash",
  "lazy_static",
@@ -1813,7 +1826,6 @@ dependencies = [
  "parking_lot 0.12.1",
  "pilota",
  "pin-project",
- "smol_str",
  "thiserror",
  "tokio",
  "tracing",
